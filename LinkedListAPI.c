@@ -1,5 +1,3 @@
-// NAME : ILIYAN MOMIN ................... STUDENT ID : 1302338
-
 #include "LinkedListAPI.h"
 #include "assert.h"
 
@@ -10,7 +8,6 @@
 *@param compareFunction function pointer to compare two nodes of the list in order to test for equality or order
 **/
 List * initializeList(char* (*printFunction)(void* toBePrinted),void (*deleteFunction)(void* toBeDeleted),int (*compareFunction)(const void* first,const void* second)){
-    //Asserts create a partial function...
     assert(printFunction != NULL);
     assert(deleteFunction != NULL);
     assert(compareFunction != NULL);
@@ -28,7 +25,6 @@ List * initializeList(char* (*printFunction)(void* toBePrinted),void (*deleteFun
 	
 	return tmpList;
 }
-
 
 /** Deletes the entire linked list, freeing all memory.
 * uses the supplied function pointer to release allocated memory for the data
@@ -96,12 +92,6 @@ Node* initializeNode(void* data){
 	return tmpNode;
 }
 
-/**Inserts a Node at the front of a linked list.  List metadata is updated
-* so that head and tail pointers are correct.
-*@pre 'List' type must exist and be used in order to keep track of the linked list.
-*@param list pointer to the dummy head of the list
-*@param toBeAdded a pointer to data that is to be added to the linked list
-**/
 void insertBack(List* list, void* toBeAdded){
 	if (list == NULL || toBeAdded == NULL){
 		return;
@@ -146,11 +136,6 @@ void insertFront(List* list, void* toBeAdded){
     }
 }
 
-/**Returns a pointer to the data at the front of the list. Does not alter list structure.
- *@pre The list exists and has memory allocated to it
- *@param the list struct
- *@return pointer to the data located at the head of the list
- **/
 void* getFromFront(List * list){
 	if (list->head == NULL){
 		return NULL;
@@ -159,11 +144,6 @@ void* getFromFront(List * list){
 	return list->head->data;
 }
 
-/**Returns a pointer to the data at the back of the list. Does not alter list structure.
- *@pre The list exists and has memory allocated to it
- *@param the list struct
- *@return pointer to the data located at the tail of the list
- **/
 void* getFromBack(List * list){
 	if (list->tail == NULL){
 		return NULL;
